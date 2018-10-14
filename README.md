@@ -1,4 +1,4 @@
-# React Server Side Redering App
+# React Server Side Rendering App
 
 ## Installation
 

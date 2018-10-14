@@ -3,7 +3,7 @@ const dev = process.env.NODE_ENV !== "production";
 
 const config = {
   mode: dev ? "development" : "production",
-  context: path.join(__dirname, "src"),
+  context: path.resolve(__dirname, "src"),
   devtool: dev ? "none" : "source-map",
   entry: {
     app: "./client.js",
