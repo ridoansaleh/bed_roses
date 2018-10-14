@@ -1,10 +1,10 @@
-import { createStore, combineReducers, applyMiddleware } from "redux";
+import { applyMiddleware, createStore, combineReducers, compose } from "redux";
 import thunkMiddleware from "redux-thunk";
 import { fetchCountries } from "../../api";
 
-export const initializeSession = ( ) => ( {
+export const initializeSession = () => ({
     type: "INITIALIZE_SESSION",
-} );
+});
 
 const storeData = (data) => ({
     type: "STORE_DATA",
@@ -37,5 +37,13 @@ const reducer = combineReducers({
   data: dataReducer,
 });
 
-export default (initialState) =>
-  createStore(reducer, initialState, applyMiddleware(thunkMiddleware));
+export const configureStore = (initialState ) => {
+  const composeEnhancers = typeof window === 'object' && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+  return createStore(
+    reducer,
+    initialState,
+    composeEnhancers(
+      applyMiddleware(thunkMiddleware)
+    )
+  );
+}

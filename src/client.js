@@ -4,9 +4,9 @@ import { BrowserRouter as Router } from "react-router-dom";
 import { Provider as ReduxProvider } from "react-redux";
 
 import Layout from "./components/Layout";
-import createStore from "./redux/store";
+import { configureStore } from "./redux/store";
 
-const store = createStore( window.REDUX_DATA );
+const store = configureStore( window.REDUX_DATA );
 
 const jsx = (
   <ReduxProvider store={store}>
