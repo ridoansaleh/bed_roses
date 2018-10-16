@@ -54,8 +54,7 @@ function htmlTemplate( reactDom, reduxState, helmetData ) {
           ${ helmetData.title.toString( ) }
           ${ helmetData.meta.toString( ) }
           <title>React SSR</title>
-      </head>
-      
+      </head>     
       <body>
           <div id="app">${ reactDom }</div>
           <script>
