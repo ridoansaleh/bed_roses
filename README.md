@@ -1,4 +1,4 @@
-# React Server Side Rendering App
+# React Server Side Rendering Template
 
 ## Installation
 
@@ -15,6 +15,6 @@
   `yarn database`
 
 - Run the React App
-  `yarn dev`
+  `yarn start`
 
 - Open `http:localhost:3000` on your favorite browser

@@ -1,3 +1,19 @@
 {
-  "presets": ["@babel/env", "@babel/react"]
+  "presets": [
+    "@babel/env",
+    "@babel/react"
+  ],
+  "env": {
+    "server": {
+      "plugins": [
+        [
+          "css-modules-transform", {
+            "preprocessCss": "./sass-loader.js",
+            "generateScopedName": "[hash:8]",
+            "extensions": [".scss"]
+          }
+        ]
+      ]
+    }
+}
 }
