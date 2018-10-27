@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "scripts": {
     "database": "json-server ./api/database.json",
-    "start": "npm-run-all --parallel server client",
-    "server": "BABEL_ENV=server babel ./index.js --out-dir ./dist/server",
-    "client": "webpack --watch --progress",
+    "start": "npm-run-all --parallel build:dev server",
+    "server": "@babel/node ./index.js",
+    "build:dev": "webpack --config webpack.config.server.js --progress",
     "build": "NODE_ENV=production webpack --progress"
   },
   "dependencies": {
@@ -27,6 +27,7 @@
     "babel-cli": "^6.26.0",
     "babel-loader": "^8.0.4",
     "babel-plugin-css-modules-transform": "^1.6.1",
+    "babel-preset-env": "^1.7.0",
     "css-loader": "^1.0.0",
     "express": "^4.16.4",
     "mini-css-extract-plugin": "^0.4.4",
@@ -38,6 +39,7 @@
     "style-loader": "^0.23.1",
     "webpack": "^4.20.2",
     "webpack-cli": "^3.1.2",
+    "webpack-dev-middleware": "^3.4.0",
     "webpack-node-externals": "^1.7.2"
   },
   "license": "MIT"

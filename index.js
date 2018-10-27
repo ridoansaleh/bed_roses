@@ -1,6 +1,6 @@
 require("@babel/register")(
   {
-    presets: [ "@babel/env" ],
+    presets: [ "@babel/preset-env" ],
   }
 );
 
