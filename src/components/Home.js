@@ -1,5 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
+import styles from "../css/Home.scss";
 import { fetchData } from "../redux/store";
 
 class Home extends React.Component {
@@ -16,9 +17,9 @@ class Home extends React.Component {
     return (
       <div>
         <h2>Countries</h2>
-        <ul>
+        <ul className={styles.main}>
           {countries.map(({ id, name }) => (
-            <li key={id}> {name} </li>
+            <li key={id} className={styles.child}> {name} </li>
           ))}
         </ul>
       </div>
