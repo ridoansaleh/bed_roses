@@ -11,7 +11,7 @@ const serverConfig = {
   target: 'node',
   externals: [nodeExternals()],
   entry: {
-    server: "./serverNew.js",
+    server: "./server.js",
   },
   resolve: {
     modules: [
@@ -23,8 +23,8 @@ const serverConfig = {
       {
         test: /\.scss$/,
         use: [
-          'css-loader',
-          'sass-loader'
+          { loader: 'css-loader' },
+          { loader: 'sass-loader' }
         ],
       }
     ])
